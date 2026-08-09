@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sumit Adeppa — Java Backend Engineer specializing in Spring Boot, Microservices, REST APIs, Docker, and CI/CD Automation." />
+  <meta name="author" content="Sumit Adeppa" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Sumit Adeppa | Full Stack Engineer" />
+  <meta property="og:description"
+    content="Backend Engineer specializing in Java, Spring Boot microservices, REST APIs, and automated DevOps pipelines." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sumit-adeppa.github.io" />
+  <meta property="og:site_name" content="Sumit Adeppa | Full Stack Engineer" />
+  <meta property="og:image" content="https://sumit-adeppa.github.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sumit Adeppa | Full Stack Engineer" />
+  <meta name="twitter:description"
+    content="Backend Engineer specializing in Java, Spring Boot microservices, REST APIs, and automated DevOps pipelines." />
+  <meta name="twitter:image" content="https://sumit-adeppa.github.io/assets/og-image.png" />
+
+  <title>Sumit Adeppa | Full Stack Engineer</title>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Early Theme Detection + JS enhancement flag -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+
+      var theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+
+      var themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) {
+        themeColor.setAttribute('content', theme === 'dark' ? '#0b0f19' : '#ffffff');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="page-tech-background" aria-hidden="true"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="Sumit Adeppa Homepage">
+        Sumit Adeppa.
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false"
+        aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="navMenu" role="navigation" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          Home
+        </a>
+        <a href="#about" class="nav-link">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          About
+        </a>
+        <a href="#skills" class="nav-link">
+          <i class="fa-solid fa-code" aria-hidden="true"></i>
+          Skills
+        </a>
+        <a href="#experience" class="nav-link">
+          <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+          Experience
+        </a>
+        <a href="#projects" class="nav-link">
+          <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+          Projects
+        </a>
+        <a href="#certifications" class="nav-link">
+          <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+          Certifications
+        </a>
+        <a href="#education" class="nav-link">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          Education
+        </a>
+        <a href="#contact" class="nav-link">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          Contact
+        </a>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Switch visual theme"
+            title="Toggle Light/Dark Theme">
+            <i class="fa-solid fa-sun theme-icon--sun" aria-hidden="true"></i>
+            <i class="fa-solid fa-moon theme-icon--moon" aria-hidden="true"></i>
+          </button>
+
+          <a id="hireMeButton" href="#contact" class="btn btn-sm btn-primary nav-cta"
+            aria-label="Open the contact form">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            <span>Hire Me</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay Backdrop -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="hero page active">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            <span>Open for Full Stack Engineer &amp; Software Engineering Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight-gradient">Sumit Adeppa</span>
+            <span class="hero-subtitle">Full Stack Engineer</span>
+          </h1>
+
+          <p class="hero-desc">
+            Passionate Software Engineer specializing in <strong>Java 17+</strong>, <strong>Spring Boot</strong>
+            microservices,
+            high-performance REST APIs, and automated <strong>Docker &amp; CI/CD</strong> pipelines. Focused on clean
+            architecture,
+            solid design patterns, and engineering reliability.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code-branch" aria-hidden="true"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Me
+            </a>
+            <a id="copyResumeBtn"
+              href="https://drive.google.com/file/d/15KnMczp1u-ZQ8ILBBcM-Otft38t8LAHF/view?usp=sharing" target="_blank"
+              rel="noopener" class="btn btn-secondary" title="View & Download Resume (Google Drive)"
+              aria-label="Open Resume in new tab">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Resume / CV
+            </a>
+          </div>
+
+          <!-- Hero Metrics Bar -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-target="2">2+</span>
+              <span class="stat-label">Internships</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="6">6+</span>
+              <span class="stat-label">Microservices</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">7.42</span>
+              <span class="stat-label">CGPA (VTU CSE)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Code Window -->
+        <div class="hero-code-wrapper" aria-hidden="true">
+          <div class="code-window">
+            <div class="code-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="code-tabs" role="tablist" aria-label="Code snippets">
+                <button class="code-tab active" data-tab="java" id="tabBtn-java" role="tab" aria-selected="true"
+                  aria-controls="tab-java"><i class="fa-brands fa-java"></i>
+                  OrderController.java</button>
+                <button class="code-tab" data-tab="docker" id="tabBtn-docker" role="tab" aria-selected="false"
+                  aria-controls="tab-docker"><i class="fa-brands fa-docker"></i> Dockerfile</button>
+                <button class="code-tab" data-tab="jenkins" id="tabBtn-jenkins" role="tab" aria-selected="false"
+                  aria-controls="tab-jenkins"><i class="fa-solid fa-gears"></i> Jenkinsfile</button>
+              </div>
+            </div>
+
+            <div class="code-body">
+              <!-- Tab 1: Java REST Controller -->
+              <pre class="code-block active" id="tab-java" role="tabpanel" aria-labelledby="tabBtn-java"><code><span class="hl-ann">@RestController</span>
+<span class="hl-ann">@RequestMapping</span>(<span class="hl-str">"/api/v1/orders"</span>)
+<span class="hl-kw">public class</span> <span class="hl-cls">OrderController</span> {
+
+    <span class="hl-ann">@Autowired</span>
+    <span class="hl-kw">private</span> <span class="hl-cls">OrderService</span> orderService;
+
+    <span class="hl-ann">@PostMapping</span>
+    <span class="hl-ann">@PreAuthorize</span>(<span class="hl-str">"hasRole('USER')"</span>)
+    <span class="hl-kw">public</span> <span class="hl-cls">ResponseEntity</span>&lt;<span class="hl-cls">OrderDTO</span>&gt; <span class="hl-fn">createOrder</span>(
+            <span class="hl-ann">@Valid @RequestBody</span> <span class="hl-cls">OrderRequest</span> request) {
+        
+        <span class="hl-cls">OrderDTO</span> created = orderService.<span class="hl-fn">processOrder</span>(request);
+        <span class="hl-kw">return</span> <span class="hl-cls">ResponseEntity</span>.<span class="hl-fn">status</span>(<span class="hl-cls">HttpStatus</span>.CREATED).<span class="hl-fn">body</span>(created);
+    }
+} <span class="terminal-cursor">|</span></code></pre>
+
+              <!-- Tab 2: Dockerfile -->
+              <pre class="code-block" id="tab-docker" role="tabpanel"
+                aria-labelledby="tabBtn-docker"><code><span class="hl-kw">FROM</span> eclipse-temurin:17-jdk-alpine <span class="hl-kw">AS</span> builder
+<span class="hl-kw">WORKDIR</span> /app
+<span class="hl-kw">COPY</span> . .
+<span class="hl-kw">RUN</span> ./mvnw clean package -DskipTests
+
+<span class="hl-kw">FROM</span> eclipse-temurin:17-jre-alpine
+<span class="hl-kw">WORKDIR</span> /app
+<span class="hl-kw">COPY</span> --from=builder /app/target/*.jar app.jar
+<span class="hl-kw">EXPOSE</span> 8080
+<span class="hl-kw">ENTRYPOINT</span> [<span class="hl-str">"java"</span>, <span class="hl-str">"-jar"</span>, <span class="hl-str">"app.jar"</span>]</code></pre>
+
+              <!-- Tab 3: Jenkinsfile -->
+              <pre class="code-block" id="tab-jenkins" role="tabpanel" aria-labelledby="tabBtn-jenkins"><code><span class="hl-kw">pipeline</span> {
+    <span class="hl-kw">agent</span> any
+    <span class="hl-kw">stages</span> {
+        <span class="hl-kw">stage</span>(<span class="hl-str">'Build &amp; Test'</span>) {
+            <span class="hl-kw">steps</span> { <span class="hl-fn">sh</span> <span class="hl-str">'mvn clean test'</span> }
+        }
+        <span class="hl-kw">stage</span>(<span class="hl-str">'Docker Package'</span>) {
+            <span class="hl-kw">steps</span> { <span class="hl-fn">sh</span> <span class="hl-str">'docker build -t cartify-api:latest .'</span> }
+        }
+    }
+}</code></pre>
+            </div>
+            <div class="code-footer">
+              <span class="code-status"><i class="fa-solid fa-check-circle"></i> Compiled Clean • 100% Test
+                Coverage</span>
+              <button class="copy-code-btn" id="copyCodeBtn" title="Copy code snippet"><i
+                  class="fa-regular fa-copy"></i> Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Background &amp; Philosophy</span>
+          <h1 class="section-title">About Me</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio">
+            <p class="about-lead">
+              Computer Science graduate from <strong>VTU Belagavi</strong> (CGPA: 7.42) with hands-on internship
+              experience
+              building enterprise-style backend microservices and automated DevOps workflows in Bengaluru.
+            </p>
+            <p>
+              I specialize in designing <strong>RESTful APIs with Spring Boot</strong>, implementing <strong>JWT &amp;
+                RBAC authentication</strong>,
+              optimizing relational &amp; NoSQL database queries, and establishing robust <strong>CI/CD deployment
+                pipelines using Jenkins and Docker</strong>.
+            </p>
+            <p>
+              Driven by writing clean, maintainable, and well-tested code following SOLID principles and layered
+              architecture.
+              Currently seeking full-time Software Engineering &amp; Backend Developer roles.
+            </p>
+
+            <div class="about-competencies">
+              <h3><i class="fa-solid fa-sliders"></i> Core Engineering Competencies</h3>
+              <div class="comp-grid">
+                <div class="comp-item">
+                  <i class="fa-solid fa-server"></i>
+                  <div>
+                    <strong>Microservices &amp; REST</strong>
+                    <span>Spring Boot, MVC, JPA, JWT</span>
+                  </div>
+                </div>
+                <div class="comp-item">
+                  <i class="fa-solid fa-database"></i>
+                  <div>
+                    <strong>Database Engineering</strong>
+                    <span>MySQL, Schema Design, MongoDB</span>
+                  </div>
+                </div>
+                <div class="comp-item">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <div>
+                    <strong>DevOps Automation</strong>
+                    <span>Docker, Jenkins, Maven, Git</span>
+                  </div>
+                </div>
+                <div class="comp-item">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <div>
+                    <strong>Security &amp; Architecture</strong>
+                    <span>RBAC, Validation, Clean Code</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cards">
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="info-details">
+                <span class="info-label">Degree</span>
+                <strong class="info-value">B.E. Computer Science &amp; Engineering</strong>
+                <span class="info-sub">VTU Belagavi &bull; 7.42 CGPA</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-details">
+                <span class="info-label">Current Location</span>
+                <strong class="info-value">Bengaluru, Karnataka</strong>
+                <span class="info-sub">Open to relocate nationwide</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="info-details">
+                <span class="info-label">Experience Level</span>
+                <strong class="info-value">Full-Stack &amp; DevOps Intern</strong>
+                <span class="info-sub">KodNest &amp; NSDC Internships</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="info-details">
+                <span class="info-label">Availability</span>
+                <strong class="info-value">Immediate Joiner</strong>
+                <span class="info-sub">Full-time roles preferred</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Competence</span>
+          <h1 class="section-title">Tech Stack &amp; Skills</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="skills-filter" role="group" aria-label="Filter skills by category">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All Skills</button>
+          <button class="filter-btn" data-filter="backend" aria-pressed="false">Backend &amp; Java</button>
+          <button class="filter-btn" data-filter="devops" aria-pressed="false">DevOps &amp; Cloud</button>
+          <button class="filter-btn" data-filter="database" aria-pressed="false">Databases</button>
+          <button class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend &amp; Tools</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1: Backend -->
+          <div class="skill-card reveal" data-category="backend">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-code skill-cat-icon"></i>
+              <h3>Backend &amp; Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag tag-primary"><i class="fa-brands fa-java"></i> Java 17+
+                <small>Core/Advanced</small></span>
+              <span class="tag tag-primary"><i class="fa-solid fa-leaf"></i> Spring Boot
+                <small>Microservices</small></span>
+              <span class="tag"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+              <span class="tag"><i class="fa-solid fa-layer-group"></i> Spring Data JPA</span>
+              <span class="tag"><i class="fa-solid fa-cube"></i> Hibernate ORM</span>
+              <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+            </div>
+          </div>
+
+          <!-- Card 2: DevOps & Cloud -->
+          <div class="skill-card reveal" data-category="devops">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-cloud-arrow-up skill-cat-icon"></i>
+              <h3>DevOps &amp; Automation</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag tag-primary"><i class="fa-brands fa-docker"></i> Docker
+                <small>Containerization</small></span>
+              <span class="tag tag-primary"><i class="fa-solid fa-gears"></i> Jenkins <small>CI/CD
+                  Pipelines</small></span>
+              <span class="tag"><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span>
+              <span class="tag"><i class="fa-solid fa-box"></i> Maven</span>
+              <span class="tag"><i class="fa-solid fa-server"></i> IBM Cloud</span>
+              <span class="tag"><i class="fa-brands fa-aws"></i> AWS Fundamentals</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Databases -->
+          <div class="skill-card reveal" data-category="database">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-database skill-cat-icon"></i>
+              <h3>Database Systems</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag tag-primary"><i class="fa-solid fa-database"></i> MySQL
+                <small>Relational/Indexing</small></span>
+              <span class="tag tag-primary"><i class="fa-solid fa-leaf"></i> MongoDB <small>NoSQL
+                  Document</small></span>
+              <span class="tag"><i class="fa-solid fa-table"></i> SQL Query Optimization</span>
+              <span class="tag"><i class="fa-solid fa-database"></i> Oracle DB</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Architecture & Security -->
+          <div class="skill-card reveal" data-category="backend">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-shield-halved skill-cat-icon"></i>
+              <h3>Architecture &amp; Security</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag tag-primary"><i class="fa-solid fa-key"></i> JWT &amp; OAuth2</span>
+              <span class="tag"><i class="fa-solid fa-user-lock"></i> RBAC (Role Access)</span>
+              <span class="tag"><i class="fa-solid fa-sitemap"></i> Layered Architecture</span>
+              <span class="tag"><i class="fa-solid fa-diagram-project"></i> OOP &amp; Design Patterns</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Frontend & Tools -->
+          <div class="skill-card reveal" data-category="frontend">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-laptop-code skill-cat-icon"></i>
+              <h3>Frontend &amp; Development</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag tag-primary"><i class="fa-brands fa-react"></i> React.js</span>
+              <span class="tag"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+              <span class="tag"><i class="fa-brands fa-html5"></i> HTML5 &amp; CSS3</span>
+              <span class="tag"><i class="fa-solid fa-mobile-screen"></i> Responsive Web Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Industry Internship Trajectory</span>
+          <h1 class="section-title">Work Experience</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item reveal">
+            <div class="tl-marker"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div>
+                  <h3 class="tl-role">Full-Stack Development Intern</h3>
+                  <span class="tl-company"><i class="fa-solid fa-building"></i> KodNest Technologies &bull; Bengaluru,
+                    KA</span>
+                </div>
+                <span class="tl-date"><i class="fa-solid fa-calendar-days"></i> Jun 2025 – Feb 2026</span>
+              </div>
+
+              <ul class="tl-list">
+                <li>Architected and implemented <strong>15+ Spring Boot REST API endpoints</strong> with centralized
+                  exception handling (`@ControllerAdvice`), input validation schemas, and Spring Data JPA persistence.
+                </li>
+                <li>Engineered stateless <strong>JWT authentication and Role-Based Access Control (RBAC)</strong>,
+                  securing sensitive application routes against unauthorized requests.</li>
+                <li>Integrated React.js frontend interfaces with backend microservices, eliminating cross-origin issues
+                  via CORS configuration and optimized HTTP response payloads.</li>
+                <li>Refactored monolithic legacy code into a modular <strong>3-tier layered architecture</strong>
+                  (Controller, Service, Repository), improving code readability and maintainability.</li>
+              </ul>
+
+              <div class="tl-tech-stack">
+                <span>Java 17</span><span>Spring Boot</span><span>Spring
+                  Security</span><span>JWT</span><span>React.js</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item reveal">
+            <div class="tl-marker"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div>
+                  <h3 class="tl-role">AI-DevOps Engineer Intern</h3>
+                  <span class="tl-company"><i class="fa-solid fa-building"></i> NSDC (National Skill Development Corp)
+                    &bull; KA</span>
+                </div>
+                <span class="tl-date"><i class="fa-solid fa-calendar-days"></i> Sep 2024 – Feb 2025</span>
+              </div>
+
+              <ul class="tl-list">
+                <li>Constructed multi-stage <strong>Jenkins CI/CD automation pipelines</strong> integrated with GitHub
+                  Webhooks, triggering automated build, test, and dockerization workflows on every push.</li>
+                <li>Containerized Python microservices using multi-stage <strong>Docker
+                    builds</strong>, reducing final container image footprints by 40%.</li>
+                <li>Automated deployment processes to IBM Cloud infrastructure, eliminating manual steps and reducing
+                  release deployment time by 80%.</li>
+                <li>Authored automated health-monitoring shell scripts for containerized deployments with fail-safe
+                  automatic rollbacks.</li>
+              </ul>
+
+              <div class="tl-tech-stack">
+                <span>Jenkins</span><span>Docker</span><span>GitHub Webhooks</span><span>IBM
+                  Cloud</span><span>Linux/Bash</span><span>Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Software Engineering Works</span>
+          <h1 class="section-title">Highlighted Projects</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal">
+            <div class="project-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-cart-shopping"></i></div>
+              <span class="project-type-tag">Microservices &bull; E-Commerce</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Cartify — Modular E-Commerce Platform</h3>
+              <p class="project-sub">Distributed 6-Service Backend System</p>
+
+              <p class="project-desc">
+                Architected a modular 6-service e-commerce platform handling Authentication, Product Management, Cart
+                Operations, Order Processing, and Razorpay Payments. Implemented JWT role-based authorization and
+                optimized MongoDB aggregations.
+              </p>
+
+              <div class="project-highlights">
+                <span><i class="fa-solid fa-check"></i> 6 Independent Microservices</span>
+                <span><i class="fa-solid fa-check"></i> Razorpay Payment Integration</span>
+                <span><i class="fa-solid fa-check"></i> JWT &amp; Security Layer</span>
+              </div>
+
+              <div class="project-tags">
+                <span>Java</span><span>Spring
+                  Boot</span><span>React.js</span><span>MongoDB</span><span>JWT</span><span>Razorpay</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Sumit-adeppa/Cartify-Modular-eCommerce-Platform.git" target="_blank"
+                  rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal">
+            <div class="project-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-robot"></i></div>
+              <span class="project-type-tag">NLP &amp; Machine Intelligence</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Intelligent Agent Job Search System</h3>
+              <p class="project-sub">NLP-Powered Resume &amp; Skill Matcher</p>
+
+              <p class="project-desc">
+                Developed an intelligent job matching platform that parses unstructured PDF resumes using PyPDF,
+                extracts key developer technical skills using custom regex/NLP pipelines, and computes candidate-job
+                match relevance with RapidFuzz fuzzy algorithms.
+              </p>
+
+              <div class="project-highlights">
+                <span><i class="fa-solid fa-check"></i> Automated PDF Resume Parsing</span>
+                <span><i class="fa-solid fa-check"></i> RapidFuzz Match Score</span>
+                <span><i class="fa-solid fa-check"></i> Paginated Django Interface</span>
+              </div>
+
+              <div class="project-tags">
+                <span>Python</span><span>Django</span><span>RapidFuzz</span><span>PyPDF</span><span>pandas</span><span>NLP</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Sumit-adeppa/Intelligent-Agent-Based-Job-Search-System.git" target="_blank"
+                  rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal">
+            <div class="project-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-gears"></i></div>
+              <span class="project-type-tag">DevOps &amp; Infrastructure</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Automated CI/CD DevOps Pipeline</h3>
+              <p class="project-sub">Continuous Integration &amp; Cloud Deployment</p>
+
+              <p class="project-desc">
+                Designed an automated Jenkins declarative CI/CD pipeline executing build compilation, JUnit test
+                validation, artifact packaging, and containerized deployment. Integrated GitHub webhooks for
+                push-triggered automated delivery to IBM Cloud.
+              </p>
+
+              <div class="project-highlights">
+                <span><i class="fa-solid fa-check"></i> Push-Triggered GitHub Webhooks</span>
+                <span><i class="fa-solid fa-check"></i> Artifact Archiving &amp; Logs</span>
+                <span><i class="fa-solid fa-check"></i> Containerized Cloud Release</span>
+              </div>
+
+              <div class="project-tags">
+                <span>Jenkins</span><span>GitHub Webhooks</span><span>Docker</span><span>IBM
+                  Cloud</span><span>Bash</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Sumit-adeppa/Automated-CI-CD-Pipeline.git" target="_blank" rel="noopener"
+                  class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Verified Accomplishments</span>
+          <h1 class="section-title">Certifications &amp; Credentials</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="cert-info">
+              <h3>Full-Stack Java Development Certification</h3>
+              <p class="cert-issuer">KodNest Technologies &bull; Bengaluru</p>
+              <p class="cert-desc">Comprehensive certification covering Core &amp; Advanced Java, Spring Boot
+                microservices, Hibernate, REST APIs, and SQL.</p>
+              <span class="cert-badge"><i class="fa-solid fa-award"></i> Verified Credential</span>
+            </div>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-gears"></i></div>
+            <div class="cert-info">
+              <h3>AI &amp; DevOps Engineering Credential</h3>
+              <p class="cert-issuer">NSDC (National Skill Development Corp) &bull; Govt. of India</p>
+              <p class="cert-desc">Hands-on specialization in Jenkins CI/CD pipeline automation, Docker
+                containerization, and Cloud deployment workflows.</p>
+              <span class="cert-badge"><i class="fa-solid fa-award"></i> Verified Credential</span>
+            </div>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="cert-info">
+              <h3>IBM Cloud Application Foundation</h3>
+              <p class="cert-issuer">IBM &bull; Enterprise Learning</p>
+              <p class="cert-desc">Specialized training in cloud native architectures, container orchestration concepts,
+                and secure cloud API deployments.</p>
+              <span class="cert-badge"><i class="fa-solid fa-award"></i> Verified Credential</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section section-alt page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Foundation</span>
+          <h1 class="section-title">Education</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="edu-info">
+            <div class="edu-header">
+              <div>
+                <h3>Bachelor of Engineering (B.E.)</h3>
+                <p class="edu-field">Computer Science &amp; Engineering</p>
+              </div>
+              <span class="edu-date"><i class="fa-solid fa-calendar"></i> Dec 2021 – May 2025</span>
+            </div>
+
+            <p class="edu-inst"><i class="fa-solid fa-university"></i> Visvesvaraya Technological University (VTU),
+              Belagavi</p>
+
+            <div class="edu-meta">
+              <span class="cgpa-pill"><i class="fa-solid fa-star"></i> Cumulative CGPA: <strong>7.42 /
+                  10.0</strong></span>
+            </div>
+
+            <div class="edu-coursework">
+              <h4>Relevant Computer Science Coursework:</h4>
+              <div class="course-tags">
+                <span>Data Structures &amp; Algorithms</span>
+                <span>Object-Oriented Programming (OOP)</span>
+                <span>Database Management Systems (DBMS)</span>
+                <span>Computer Networks</span>
+                <span>Operating Systems</span>
+                <span>Software Engineering &amp; Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section page">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h1 class="section-title">Get In Touch</h1>
+          <div class="title-line"></div>
+        </div>
+
+        <p class="contact-lead text-center">
+          Looking for a dedicated Full Stack Engineer or SDE for your team? I'm available for full-time opportunities.
+        </p>
+        <!-- Contact Form -->
+        <div class="contact-form-card reveal">
+          <div class="contact-form-header">
+            <div class="contact-form-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+            <h3>Send Me a Message</h3>
+            <p>Fill out the form below and I'll get back to you within 24–48 hours.</p>
+          </div>
+
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="96c42812-2dd8-4bd6-806c-66876e58bae4" />
+            <input type="hidden" name="subject" value="New Contact Form Submission - Portfolio" />
+            <input type="checkbox" name="botcheck" id="contactBotcheck" class="contact-botcheck" tabindex="-1"
+              autocomplete="off" aria-hidden="true" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cfName">Name</label>
+                <div class="form-field">
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
+                  <input type="text" id="cfName" name="name" placeholder="Your full name" required
+                    autocomplete="name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cfEmail">Email</label>
+                <div class="form-field">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <input type="email" id="cfEmail" name="email" placeholder="you@example.com" required
+                    autocomplete="email" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cfMessage">Message</label>
+              <div class="form-field">
+                <i class="fa-solid fa-message" aria-hidden="true"></i>
+                <textarea id="cfMessage" name="message" rows="6"
+                  placeholder="Tell me about your project, role, or opportunity..." required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit" id="formSubmitBtn">
+              <span class="form-submit-label">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+              </span>
+              <span class="form-submit-spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-note" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Social Media Icons -->
+        <nav class="social-nav-icons reveal" aria-label="Social media and contact links">
+          <a href="mailto:adeppasumit4@gmail.com" class="social-nav-icon" title="Email" aria-label="Send Direct Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/sumit-adeppa" target="_blank" rel="noopener" class="social-nav-icon"
+            title="LinkedIn" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/Sumit-adeppa" target="_blank" rel="noopener" class="social-nav-icon"
+            title="GitHub" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.hackerrank.com/profile/adeppasumit4" target="_blank" rel="noopener"
+            class="social-nav-icon" title="HackerRank" aria-label="HackerRank Profile">
+            <i class="fa-brands fa-hackerrank" aria-hidden="true"></i>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">Sumit Adeppa<span class="dot">.</span></a>
+        <p>Full Stack Engineer &bull; DevOps</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://github.com/Sumit-adeppa" target="_blank" rel="noopener"
+          aria-label="GitHub Repository Profile"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sumit-adeppa" target="_blank" rel="noopener"
+          aria-label="LinkedIn Professional Profile"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.hackerrank.com/profile/adeppasumit4" target="_blank" rel="noopener"
+          aria-label="HackerRank Profile"><i class="fa-brands fa-hackerrank"></i></a>
+        <a href="mailto:adeppasumit4@gmail.com" aria-label="Send Direct Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Sumit Adeppa. Engineered with HTML5, CSS3 &amp; JS (ES6+).</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- Scroll Top Button -->
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll back to top of page">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script defer src="script.js"></script>
+</body>
+
+</html>
