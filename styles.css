@@ -43,32 +43,6 @@
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-[data-theme="dark"] {
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --primary-light: rgba(59, 130, 246, 0.12);
-  --primary-glow: rgba(59, 130, 246, 0.25);
-
-  --accent-emerald: #10b981;
-  --accent-emerald-light: rgba(16, 185, 129, 0.12);
-
-  --text: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-
-  --bg: #0b0f19;
-  --bg-alt: #0f172a;
-  --bg-card: #1e293b;
-  --bg-header: rgba(11, 15, 25, 0.88);
-
-  --border: #1e293b;
-  --border-hover: #334155;
-
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 14px 32px rgba(0, 0, 0, 0.5);
-}
-
 /* === Global Reset & Responsiveness Core === */
 *,
 *::before,
@@ -249,46 +223,6 @@ input {
   align-items: center;
   gap: 12px;
   margin-left: 8px;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  min-width: 40px;
-  min-height: 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius);
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition: var(--transition);
-  flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-}
-
-.theme-toggle .theme-icon--sun {
-  display: none;
-}
-
-.theme-toggle .theme-icon--moon {
-  display: inline;
-}
-
-[data-theme="dark"] .theme-toggle .theme-icon--sun {
-  display: inline;
-}
-
-[data-theme="dark"] .theme-toggle .theme-icon--moon {
-  display: none;
 }
 
 /* Mobile Menu Toggle */
@@ -522,44 +456,10 @@ body.nav-open {
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.14));
 }
 
-[data-theme="dark"] .tech-icon-shape {
-  background: rgba(15, 23, 42, 0.40);
-  border-color: rgba(255, 255, 255, 0.20);
-  box-shadow: 0 0 36px rgba(59, 130, 246, 0.22);
-}
-
 .tech-icon-shape i {
   font-size: clamp(1.6rem, calc(var(--size) * 0.48), 4.2rem);
   line-height: 1;
   text-shadow: 0 0 14px rgba(0, 0, 0, 0.18);
-}
-
-/* Dark-theme visibility enhancements */
-[data-theme="dark"] .tech-icon {
-  /* gently amplify the authored opacity for better contrast on dark backgrounds */
-  opacity: calc(var(--opacity) * 1.28);
-  /* allow color bloom to blend nicely with the dark backdrop */
-  mix-blend-mode: screen;
-}
-
-[data-theme="dark"] .tech-icon::before {
-  /* stronger, warmer halo for dark mode */
-  opacity: 0.72;
-  filter: blur(26px) saturate(1.5);
-  transform: translate(-50%, -50%) scale(1.08);
-}
-
-[data-theme="dark"] .tech-icon-shape {
-  /* slightly darker panel but with brighter rim to separate icons from page background */
-  background: rgba(10, 14, 20, 0.30);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 44px rgba(0, 0, 0, 0.45), 0 0 36px rgba(59, 130, 246, 0.14);
-}
-
-[data-theme="dark"] .tech-icon-shape i {
-  /* boost saturation & brightness slightly so the icon color reads on dark backgrounds */
-  filter: saturate(1.35) brightness(1.06);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.06), 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
 /* Per-icon halo glow using the icon color for a soft bloom */
@@ -2511,13 +2411,9 @@ html.js .reveal.visible {
    ACCESSIBILITY & PRODUCTION POLISH
    ============================================ */
 
-/* Native form controls & scrollbars match the active theme */
+/* Native form controls & scrollbars match the light theme */
 :root {
   color-scheme: light;
-}
-
-[data-theme="dark"] {
-  color-scheme: dark;
 }
 
 /* Visible keyboard focus for every interactive element */
