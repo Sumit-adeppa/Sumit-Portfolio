@@ -46,22 +46,9 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Early Theme Detection + JS enhancement flag -->
+  <!-- JS enhancement flag -->
   <script>
-    (function () {
-      document.documentElement.classList.add('js');
-
-      var theme = localStorage.getItem('theme');
-      if (!theme) {
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', theme);
-
-      var themeColor = document.querySelector('meta[name="theme-color"]');
-      if (themeColor) {
-        themeColor.setAttribute('content', theme === 'dark' ? '#0b0f19' : '#ffffff');
-      }
-    })();
+    document.documentElement.classList.add('js');
   </script>
 </head>
 
@@ -83,45 +70,31 @@
 
       <nav class="nav" id="navMenu" role="navigation" aria-label="Main Navigation">
         <a href="#hero" class="nav-link">
-          <i class="fa-solid fa-house" aria-hidden="true"></i>
           Home
         </a>
         <a href="#about" class="nav-link">
-          <i class="fa-solid fa-user" aria-hidden="true"></i>
           About
         </a>
         <a href="#skills" class="nav-link">
-          <i class="fa-solid fa-code" aria-hidden="true"></i>
           Skills
         </a>
         <a href="#experience" class="nav-link">
-          <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
           Experience
         </a>
         <a href="#projects" class="nav-link">
-          <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
           Projects
         </a>
         <a href="#certifications" class="nav-link">
-          <i class="fa-solid fa-certificate" aria-hidden="true"></i>
           Certifications
         </a>
         <a href="#education" class="nav-link">
-          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
           Education
         </a>
         <a href="#contact" class="nav-link">
-          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           Contact
         </a>
 
         <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" aria-label="Switch visual theme"
-            title="Toggle Light/Dark Theme">
-            <i class="fa-solid fa-sun theme-icon--sun" aria-hidden="true"></i>
-            <i class="fa-solid fa-moon theme-icon--moon" aria-hidden="true"></i>
-          </button>
-
           <a id="hireMeButton" href="#contact" class="btn btn-sm btn-primary nav-cta"
             aria-label="Open the contact form">
             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
@@ -143,7 +116,7 @@
         <div class="hero-text">
           <div class="hero-status">
             <span class="status-dot"></span>
-            <span>Open for Full Stack Engineer &amp; Software Engineering Roles</span>
+            <span>Open for Full Stack Engineer &amp; DevOps Engineer Roles</span>
           </div>
 
           <h1 class="hero-title">
@@ -208,8 +181,9 @@
                   OrderController.java</button>
                 <button class="code-tab" data-tab="docker" id="tabBtn-docker" role="tab" aria-selected="false"
                   aria-controls="tab-docker"><i class="fa-brands fa-docker"></i> Dockerfile</button>
-                <button class="code-tab" data-tab="jenkins" id="tabBtn-jenkins" role="tab" aria-selected="false"
-                  aria-controls="tab-jenkins"><i class="fa-solid fa-gears"></i> Jenkinsfile</button>
+                <button class="code-tab" data-tab="github-actions" id="tabBtn-github-actions" role="tab"
+                  aria-selected="false" aria-controls="tab-github-actions"><i class="fa-brands fa-github"></i>
+                  ci.yml</button>
               </div>
             </div>
 
@@ -245,18 +219,22 @@
 <span class="hl-kw">EXPOSE</span> 8080
 <span class="hl-kw">ENTRYPOINT</span> [<span class="hl-str">"java"</span>, <span class="hl-str">"-jar"</span>, <span class="hl-str">"app.jar"</span>]</code></pre>
 
-              <!-- Tab 3: Jenkinsfile -->
-              <pre class="code-block" id="tab-jenkins" role="tabpanel" aria-labelledby="tabBtn-jenkins"><code><span class="hl-kw">pipeline</span> {
-    <span class="hl-kw">agent</span> any
-    <span class="hl-kw">stages</span> {
-        <span class="hl-kw">stage</span>(<span class="hl-str">'Build &amp; Test'</span>) {
-            <span class="hl-kw">steps</span> { <span class="hl-fn">sh</span> <span class="hl-str">'mvn clean test'</span> }
-        }
-        <span class="hl-kw">stage</span>(<span class="hl-str">'Docker Package'</span>) {
-            <span class="hl-kw">steps</span> { <span class="hl-fn">sh</span> <span class="hl-str">'docker build -t cartify-api:latest .'</span> }
-        }
-    }
-}</code></pre>
+              <!-- Tab 3: GitHub Actions -->
+              <pre class="code-block" id="tab-github-actions" role="tabpanel" aria-labelledby="tabBtn-github-actions"><code><span class="hl-kw">name:</span> CI/CD Pipeline
+
+<span class="hl-kw">on:</span>
+  <span class="hl-kw">push:</span>
+    <span class="hl-kw">branches:</span> [<span class="hl-str">main</span>]
+
+<span class="hl-kw">jobs:</span>
+  <span class="hl-kw">build:</span>
+    <span class="hl-kw">runs-on:</span> ubuntu-latest
+    <span class="hl-kw">steps:</span>
+      - <span class="hl-kw">uses:</span> actions/checkout@v4
+      - <span class="hl-kw">name:</span> <span class="hl-str">Build &amp; Test</span>
+        <span class="hl-kw">run:</span> ./mvnw clean test
+      - <span class="hl-kw">name:</span> <span class="hl-str">Docker Package</span>
+        <span class="hl-kw">run:</span> docker build -t cartify-api:latest .</code></pre>
             </div>
             <div class="code-footer">
               <span class="code-status"><i class="fa-solid fa-check-circle"></i> Compiled Clean • 100% Test
@@ -289,7 +267,7 @@
               I specialize in designing <strong>RESTful APIs with Spring Boot</strong>, implementing <strong>JWT &amp;
                 RBAC authentication</strong>,
               optimizing relational &amp; NoSQL database queries, and establishing robust <strong>CI/CD deployment
-                pipelines using Jenkins and Docker</strong>.
+                pipelines using GitHub Actions and Docker</strong>.
             </p>
             <p>
               Driven by writing clean, maintainable, and well-tested code following SOLID principles and layered
@@ -419,7 +397,7 @@
             <div class="skill-tags">
               <span class="tag tag-primary"><i class="fa-brands fa-docker"></i> Docker
                 <small>Containerization</small></span>
-              <span class="tag tag-primary"><i class="fa-solid fa-gears"></i> Jenkins <small>CI/CD
+              <span class="tag tag-primary"><i class="fa-brands fa-github"></i> GitHub Actions <small>CI/CD
                   Pipelines</small></span>
               <span class="tag"><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span>
               <span class="tag"><i class="fa-solid fa-box"></i> Maven</span>
@@ -531,7 +509,8 @@
               </div>
 
               <ul class="tl-list">
-                <li>Constructed multi-stage <strong>Jenkins CI/CD automation pipelines</strong> integrated with GitHub
+                <li>Constructed multi-stage <strong>GitHub Actions CI/CD automation pipelines</strong> integrated with
+                  GitHub
                   Webhooks, triggering automated build, test, and dockerization workflows on every push.</li>
                 <li>Containerized Python microservices using multi-stage <strong>Docker
                     builds</strong>, reducing final container image footprints by 40%.</li>
@@ -542,7 +521,7 @@
               </ul>
 
               <div class="tl-tech-stack">
-                <span>Jenkins</span><span>Docker</span><span>GitHub Webhooks</span><span>IBM
+                <span>GitHub Actions</span><span>Docker</span><span>GitHub Webhooks</span><span>IBM
                   Cloud</span><span>Linux/Bash</span><span>Python</span>
               </div>
             </div>
@@ -646,7 +625,7 @@
               <p class="project-sub">Continuous Integration &amp; Cloud Deployment</p>
 
               <p class="project-desc">
-                Designed an automated Jenkins declarative CI/CD pipeline executing build compilation, JUnit test
+                Designed an automated GitHub Actions declarative CI/CD pipeline executing build compilation, JUnit test
                 validation, artifact packaging, and containerized deployment. Integrated GitHub webhooks for
                 push-triggered automated delivery to IBM Cloud.
               </p>
@@ -658,7 +637,7 @@
               </div>
 
               <div class="project-tags">
-                <span>Jenkins</span><span>GitHub Webhooks</span><span>Docker</span><span>IBM
+                <span>GitHub Actions</span><span>GitHub Webhooks</span><span>Docker</span><span>IBM
                   Cloud</span><span>Bash</span>
               </div>
 
@@ -700,7 +679,7 @@
             <div class="cert-info">
               <h3>AI &amp; DevOps Engineering Credential</h3>
               <p class="cert-issuer">NSDC (National Skill Development Corp) &bull; Govt. of India</p>
-              <p class="cert-desc">Hands-on specialization in Jenkins CI/CD pipeline automation, Docker
+              <p class="cert-desc">Hands-on specialization in GitHub Actions CI/CD pipeline automation, Docker
                 containerization, and Cloud deployment workflows.</p>
               <span class="cert-badge"><i class="fa-solid fa-award"></i> Verified Credential</span>
             </div>
