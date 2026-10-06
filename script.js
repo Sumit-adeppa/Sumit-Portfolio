@@ -67,11 +67,6 @@ function activatePage(pageId) {
    ============================================ */
 function initGlobalHandlers() {
   document.addEventListener('click', (event) => {
-    if (event.target.closest('#themeToggle')) {
-      toggleTheme();
-      return;
-    }
-
     if (event.target.closest('#menuToggle')) {
       toggleMobileNav();
       return;
@@ -143,35 +138,6 @@ function initGlobalHandlers() {
     }
   }, { passive: true });
 }
-
-/* ============================================
-   1a. Theme Toggle & Persistence
-   ============================================ */
-function toggleTheme() {
-  const html = document.documentElement;
-  const currentTheme = html.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-  html.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-
-  const themeColor = document.querySelector('meta[name="theme-color"]');
-  if (themeColor) {
-    themeColor.setAttribute('content', newTheme === 'dark' ? '#0b0f19' : '#ffffff');
-  }
-}
-
-// Listen for system theme updates
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem('theme')) {
-    const theme = e.matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-    const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (themeColor) {
-      themeColor.setAttribute('content', theme === 'dark' ? '#0b0f19' : '#ffffff');
-    }
-  }
-});
 
 /* ============================================
    1b. Mobile Navigation Toggle
